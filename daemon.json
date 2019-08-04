@@ -1,0 +1,9 @@
+{
+    "runtimes": {
+        "nvidia": {
+            "path": "nvidia-container-runtime",
+            "runtimeArgs": []
+        }
+    },
+    "dns": ["10.100.1.1", "8.8.8.8"]
+}
