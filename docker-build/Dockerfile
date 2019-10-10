@@ -12,6 +12,7 @@
 # docker run --init --runtime=nvidia --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../../BenchmarkSuite-Server:/BenchmarkSuite-Server -v /home/lty/Documents/0ad:/0ad -p 59001:5901 benchvnc
 # docker run --init --runtime=nvidia --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../../BenchmarkSuite-Server:/BenchmarkSuite-Server -v /home/lty/.local/share/0ad/saves/savegame-0010.0adsave:/root/.local/share/0ad/saves/savegame-0010.0adsave -v $PWD/../autoexec.cfg:/root/.redeclipse/autoexec.cfg --net=host game-benchvnc
 
+# docker run --init --runtime=nvidia --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../../BenchmarkSuite-Server:/BenchmarkSuite-Server -v $PWD/../savegame-0010.0adsave:/root/.local/share/0ad/saves/savegame-0010.0adsave -v $PWD/../autoexec.cfg:/root/.redeclipse/autoexec.cfg --net=host game-benchvnc
 FROM nvidia/opengl:1.0-glvnd-runtime
 
 ARG TURBOVNC_VERSION=2.1.91
