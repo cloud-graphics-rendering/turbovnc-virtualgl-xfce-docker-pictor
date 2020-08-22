@@ -12,12 +12,22 @@
 # docker run --init --runtime=nvidia --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../../BenchmarkSuite-Server:/BenchmarkSuite-Server -v /home/lty/Documents/0ad:/0ad -p 59001:5901 benchvnc
 # docker run --init --runtime=nvidia --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../../BenchmarkSuite-Server:/BenchmarkSuite-Server -v /home/lty/.local/share/0ad/saves/savegame-0010.0adsave:/root/.local/share/0ad/saves/savegame-0010.0adsave -v $PWD/../autoexec.cfg:/root/.redeclipse/autoexec.cfg --net=host game-benchvnc
 
-# docker run --init --runtime=nvidia --rm --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../../BenchmarkSuite-Server:/BenchmarkSuite-Server -v $PWD/../savegame-0010.0adsave:/root/.local/share/0ad/saves/savegame-0010.0adsave -v $PWD/../autoexec.cfg:/root/.redeclipse/autoexec.cfg --net=host game-benchvnc
+# How to use this docker image:
+#     docker pull bme855/game-benchvnc:0.2
+
+# How to build:
+#     docker build -t bme855/game-benchvnc:0.2 . //donot foget the DOT
+
+# How to push to my docker hub:
+#     docker push bme855/game-benchvnc:0.2
+
+# How to start a docker container:
+#     docker run --init --runtime=nvidia --rm --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../../benchmarksuite-pictor:/BenchmarkSuite-Server -v $PWD/../savegame-0010.0adsave:/root/.local/share/0ad/saves/savegame-0010.0adsave -v $PWD/../autoexec.cfg:/root/.redeclipse/autoexec.cfg --net=host game-benchvnc
 FROM nvidia/opengl:1.0-glvnd-runtime
 
 ARG TURBOVNC_VERSION=2.1.91
 ARG VIRTUALGL_VERSION=2.6
-ARG LIBJPEG_VERSION=2.0.1
+ARG LIBJPEG_VERSION=2.0.0
 
 ENV NVIDIA_DRIVER_CAPABILITIES ${NVIDIA_DRIVER_CAPABILITIES},display
 
