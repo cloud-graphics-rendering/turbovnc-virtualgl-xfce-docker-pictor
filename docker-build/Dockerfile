@@ -7,6 +7,15 @@
 # openssl req -new -x509 -days 365 -nodes -out self.pem -keyout self.pem
 # docker build -t benchvnc .
 
+# List all docker images:
+#     docker image ls
+
+# Delete an image from the local store
+#     docker image rm xxx
+
+# List all running containers
+#     docker container ls
+
 # How to use this docker image:
 #     docker pull bme855/game-benchvnc:0.2
 
