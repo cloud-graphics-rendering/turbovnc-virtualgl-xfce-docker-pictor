@@ -7,11 +7,6 @@
 # openssl req -new -x509 -days 365 -nodes -out self.pem -keyout self.pem
 # docker build -t benchvnc .
 
-# docker run --init --runtime=nvidia --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../supertuxkart-1.0-linux:/supertuxkart-1.0-linux -p 5901:5901 benchvnc
-# docker run --init --runtime=nvidia --name=benchvnc-3 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v /media/lty/newspace/BenchmarkFrameWork/BenchmarkSuite-Server:/BenchmarkSuite-Server -v /home/lty/Documents/0ad:/0ad -p 59002:5901 benchvnc
-# docker run --init --runtime=nvidia --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../../BenchmarkSuite-Server:/BenchmarkSuite-Server -v /home/lty/Documents/0ad:/0ad -p 59001:5901 benchvnc
-# docker run --init --runtime=nvidia --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../../BenchmarkSuite-Server:/BenchmarkSuite-Server -v /home/lty/.local/share/0ad/saves/savegame-0010.0adsave:/root/.local/share/0ad/saves/savegame-0010.0adsave -v $PWD/../autoexec.cfg:/root/.redeclipse/autoexec.cfg --net=host game-benchvnc
-
 # How to use this docker image:
 #     docker pull bme855/game-benchvnc:0.2
 
@@ -22,7 +17,7 @@
 #     docker push bme855/game-benchvnc:0.2
 
 # How to start a docker container:
-#     docker run --init --runtime=nvidia --rm --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../../benchmarksuite-pictor:/BenchmarkSuite-Server -v $PWD/../savegame-0010.0adsave:/root/.local/share/0ad/saves/savegame-0010.0adsave -v $PWD/../autoexec.cfg:/root/.redeclipse/autoexec.cfg --net=host game-benchvnc
+#     docker run --init --runtime=nvidia --rm --name=benchvnc-1 -it -v /tmp/.X11-unix/X0:/tmp/.X11-unix/X0 -v /etc/X11/xinit/xinitrc:/etc/X11/xinit/xinitrc -v $PWD/../../benchmarksuite-pictor:/BenchmarkSuite-Server -v $PWD/../savegame-0010.0adsave:/root/.local/share/0ad/saves/savegame-0010.0adsave -v $PWD/../autoexec.cfg:/root/.redeclipse/autoexec.cfg --net=host bme855/game-benchvnc:0.2
 FROM nvidia/opengl:1.0-glvnd-runtime
 
 ARG TURBOVNC_VERSION=2.1.91
